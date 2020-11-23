@@ -85,7 +85,7 @@ ul, li {
 /*---------------------------------------------*/
 input {
 	outline: none;
-	border: none;
+  border: none;
 }
 
 textarea {
@@ -222,6 +222,8 @@ iframe {
   color: #333333;
   line-height: 1.2;
   padding: 0 5px;
+  /* min-width: 300px; */
+  border: black;
 }
 
 .focus-input-information {

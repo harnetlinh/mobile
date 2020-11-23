@@ -13,21 +13,28 @@
 <body>
     <div data-role="page" id="indexPage">
         <nav>
-
             <div class="logo">
-                RubySmile Rating</div>
+                RubySmile Rating
+            </div>
             <div class="nav-items">
-
         </nav>
-        <div>
-            <button><p onclick="goToHomePage()">Home page</p></button>
-            <button><p onclick="goToCreateReviewPage()()">Create new review</p></button>
+
+        <div id="top">
+            <button class="button-control">
+                <p onclick="goToHomePage()">Home page</p>
+            </button>
+
+            <button class="button-control">
+                <p onclick="goToCreateReviewPage()()">Create new review</p>
+            </button>
         </div>
-        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search" data-filter-theme="a" data-inset="true" id="list_data">
-        </ul>
+
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search" data-filter-theme="a" data-inset="true" id="list_data"></ul>
+
     </div>
-        <div id="details">
-        </div>
+
+    <div id="details"></div>
+    
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/database.js"></script>
