@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="indexPage">
+        <nav>
+
+            <div class="logo">
+                RubySmile Rating</div>
+            <div class="nav-items">
+
+        </nav>
+        <div>
+            <button><p onclick="goToHomePage()">Home page</p></button>
+            <button><p onclick="goToCreateReviewPage()()">Create new review</p></button>
+        </div>
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search" data-filter-theme="a" data-inset="true" id="list_data">
+        </ul>
+    </div>
+        <div id="details">
+        </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/detail.js"></script>
+    <script type="text/javascript" src="js/redirect.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
