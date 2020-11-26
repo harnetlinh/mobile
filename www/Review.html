@@ -25,12 +25,12 @@
         </nav>
 
         <div id="top">
-            <button class="button-control">
-                <p onclick="goToHomePage()">Home page</p>
+            <button class="button-control" onclick="goToHomePage()">
+                <p>Home page</p>
             </button>
 
-            <button class="button-control">
-                <p onclick="goToCreateReviewPage()">Create new review</p>
+            <button class="button-control" onclick="goToCreateReviewPage()">
+                <p>Create new review</p>
             </button>
         </div>
 
@@ -45,44 +45,44 @@
 
                     <div class="wrap-input-information validate-input" data-validate="Name is required">
                         <span class="label-input-information">Restaurant Name</span>
-                        <input class="input-information" type="text" placeholder="Restaurant name" required id="r_name">
+                        <input class="input-information" type="text" placeholder="Restaurant name" required id="restaurant_name">
                         <span class="focus-input-information"></span>
                     </div>
 
                     <div class="wrap-input-information validate-input" data-validate="Name is required">
                         <span class="label-input-information">Restaurant Type</span>
-                        <input class="input-information" type="text" placeholder="Restaurant type" required id="r_type">
+                        <input class="input-information" type="text" placeholder="Restaurant type" required id="restaurant_type">
                         <span class="focus-input-information"></span>
                     </div>
 
                     <div class="wrap-input-information validate-input" data-validate="Name is required">
                         <span class="label-input-information">Date and time of the visit</span>
-                        <input class="input-information" type="datetime-local" required id="r_date">
+                        <input class="input-information" type="datetime-local" required id="date_comming">
                         <span class="focus-input-information"></span>
                     </div>
 
                     <div class="wrap-input-information validate-input" data-validate="Name is required">
                         <span class="label-input-information">Average meal price per person</span>
-                        <input class="input-information" type="number " placeholder="Average meal price per person " required id="r_average_price">
+                        <input class="input-information" type="number " placeholder="Average meal price per person " required id="restaurant_average_price">
                         <span class="focus-input-information"></span>
                     </div>
 
                     <div class="wrap-input-information input-information-select">
                         <span class="label-input-information">Service rating</span>
                         <div>
-                            <select class="selection-2" name="budget" required id="r_service_rating">
-                            <option value="1">&#9733;</option>
-                            <option value="2">&#9733;&#9733;</option>
-                            <option value="3">&#9733;&#9733;&#9733;</option>
-                            <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
-                            <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
-                        </select>
-                    </div>
+                            <select class="selection-2" name="budget" required id="restaurant_service_rating">
+                                <option value="1">&#9733;</option>
+                                <option value="2">&#9733;&#9733;</option>
+                                <option value="3">&#9733;&#9733;&#9733;</option>
+                                <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+                                <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                            </select>
+                        </div>
 
                     <div class="wrap-input-information input-information-select">
                         <span class="label-input-information">Cleanliness rating</span>
                         <div>
-                            <select class="selection-2" name="budget" required id="r_cleanliness_rating">
+                            <select class="selection-2" name="budget" required id="restaurant_cleanliness_rating">
                                 <option value="1">&#9733;</option>
                                 <option value="2">&#9733;&#9733;</option>
                                 <option value="3">&#9733;&#9733;&#9733;</option>
@@ -96,7 +96,7 @@
                     <div class="wrap-input-information input-information-select">
                         <span class="label-input-information">Food quality rating</span><br>
                         <div>
-                            <select class="selection-2" name="budget" required id="r_food_rating">
+                            <select class="selection-2" name="budget" required id="restaurant_food_rating">
                                 <option value="1">&#9733;</option>
                                 <option value="2">&#9733;&#9733;</option>
                                 <option value="3">&#9733;&#9733;&#9733;</option>
@@ -109,7 +109,7 @@
 
                     <div class="wrap-input-information validate-input" data-validate="Message is required">
                         <span class="label-input-information">Notes</span>
-                        <textarea id="r_notes" class="input-information" name="message" placeholder="Your notes here..."></textarea>
+                        <textarea id="review_note" class="input-information" name="message" placeholder="Your notes here..." rows="5"></textarea>
                         <span class="focus-input-information"></span>
                     </div>
 

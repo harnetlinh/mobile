@@ -1,89 +1,53 @@
-const listRes = [{
-        r_name: 'KFC',
-        r_type: 'Fried Chicken',
-        r_date: '17/08/2020',
-        r_average_price: '60,000',
-        r_service_rating: 3,
-        r_cleanliness_rating: 4,
-        r_food_rating: 1,
-        r_notes: 'Funny'
-    },
-    {
-        r_name: 'Chicken Bros',
-        r_type: 'Grilled Chicken',
-        r_date: '23/10/2020',
-        r_average_price: '100,000',
-        r_service_rating: 5,
-        r_cleanliness_rating: 5,
-        r_food_rating: 5,
-        r_notes: 'Very good'
-    },
-    {
-        r_name: 'Coconut Coffee',
-        r_type: 'Coffee',
-        r_date: '30/11/2020',
-        r_average_price: '90,000',
-        r_service_rating: 4,
-        r_cleanliness_rating: 3,
-        r_food_rating: 3,
-        r_notes: ''
-    },
-    {
-        r_name: 'Meat plus',
-        r_type: 'Grill meat',
-        r_date: '21/12/2020',
-        average_price: '500,000',
-        r_service_rating: 4,
-        r_cleanliness_rating: 4,
-        r_food_rating: 4,
-        r_notes: 'Expensive'
-    }
-]
-
-var db;
-var request = window.indexedDB.open("Re-Data", 2);
-request.onupgradeneeded = function(event) {
-    var db = event.target.result;
-    var objectStore = db.createObjectStore("ReData", { keyPath: "id", autoIncrement: true });
-    for (var i in listRes) {
-        objectStore.add(listRes[i])
-    }
+function random(){
+    return Math.random().toString(36).substring(7);
+}
+function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+var dumData = [];
+for(var i = 0; i < 5; i++)
+{
+    dumData.push({
+        restaurant_name: 'dummy data '+ random(),
+        restaurant_type: 'dummy data '+ random(),
+        date_comming: randomDate(new Date(2012, 0, 1), new Date()),
+        restaurant_average_price: getRandomInt(100000),
+        restaurant_service_rating: getRandomInt(6),
+        restaurant_cleanliness_rating: getRandomInt(6),
+        restaurant_food_rating: getRandomInt(6),
+        review_note: 'dummy data '+ random()
+    })
 }
 
-request.onsuccess = function(event) {
-    db = request.result;
-    console.log("Success: " + db);
-    getAllData()
+var database;
+var req = window.indexedDB.open("DB-RubySmile", 2);
+req.onupgradeneeded = function(event) {
+    var objectStore = event.target.result.createObjectStore("DBRubySmile", { keyPath: "id", autoIncrement: true });
+    console.log(dumData);
+    dumData.forEach((row)=>{
+        objectStore.add(row);
+    })
+}
+
+req.onsuccess = function(event) {
+    database = req.result;
+    getAllData();
 }
 
 function getAllData() {
-    const transaction = db.transaction(["ReData"], "readonly");
-    const objectStore = transaction.objectStore("ReData");
-    request = objectStore.getAll();
-    return request;
+    return database.transaction(["DBRubySmile"], "readonly").objectStore("DBRubySmile").getAll();
+}
+function deleteFeedback(feedbackID) {
+    return database.transaction(["DBRubySmile"], "readwrite").objectStore("DBRubySmile").delete(Number(feedbackID))
 }
 
-
-//delete
-function deleteFeedback(feedbackId) {
-    feedbackId = Number(feedbackId)
-    const deleteFb = db.transaction(["ReData"], "readwrite").objectStore("ReData").delete(feedbackId)
-    deleteFb.onsuccess = function() {
-
-        alert("delete successfully")
-        document.getElementById('list_data').innerHTML = ""
-        loadAllData()
-    }
-    deleteFb.onerror = function() {
-        alert("Delete Error")
-    }
-
+function createFeedback(feedback) {
+    return database.transaction(["DBRubySmile"], "readwrite").objectStore("DBRubySmile").add(feedback)
 }
 
-function createFeedback(data) {
-    return db.transaction(["ReData"], "readwrite").objectStore("ReData").add(data)
-}
-
-function getDetailFeedback(id) {
-    return db.transaction(["ReData"], "readonly").objectStore("ReData").get(Number(id))
+function getDetailFeedback(feedbackID) {
+    return database.transaction(["DBRubySmile"], "readonly").objectStore("DBRubySmile").get(Number(feedbackID))
 }

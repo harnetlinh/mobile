@@ -4,7 +4,7 @@
   "name": "IRate",
   "short_name": "IRate",
   "version": "com.phonegap.helloworld",
-  "description": "A rating app named with my love",
+  "description": "Hello World sample application that responds to the deviceready event.",
   "author": "PhoneGap Team",
   "icons": [],
   "start_url": "index.html"

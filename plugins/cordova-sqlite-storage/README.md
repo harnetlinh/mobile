@@ -1423,7 +1423,7 @@ A sample for Ionic 1 is provided at: [`litehelpers/Ionic-sqlite-database-example
 
 Documentation at: <http://ngcordova.com/docs/plugins/sqlite/>
 
-Other resource (apparently for Ionic 1): <https://www.packtpub.com/books/content/how-use-sqlite-ionic-store-data>
+Other resource (apparently for Ionic 1): <https://www.packtpub.com/books/content/how-use-sqlite-ionic-stoDB-RubySmile>
 
 **NOTE:** Some Ionic and other Angular pitfalls are described above.
 

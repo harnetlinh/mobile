@@ -52,6 +52,8 @@
     "cordova-browser": "^6.0.0",
     "cordova-plugin-file": "6.0.2",
     "cordova-sqlite-storage": "5.1.0",
-    "jquery-validation": "^1.19.2"
+    "jquery-validation": "^1.19.2",
+    "random-datetime": "^1.0.1",
+    "random-name": "^0.1.2"
   }
 }
